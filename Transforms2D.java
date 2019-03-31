@@ -15,8 +15,9 @@ public class Transforms2D extends JPanel {
 			int whichTransform = transformSelect.getSelectedIndex();
 			
 			//TODO Apply transforms here, depending on the value of whichTransform!
-			 switch(whichTransform){
-             case 0:
+			
+			switch(whichTransform){
+			 case 0:
                  g2.rotate(0);
                  break;
              case 1: //obraz 1
@@ -65,7 +66,9 @@ public class Transforms2D extends JPanel {
 			 {
 				 p.addPoint((int)(150*Math.cos(i*2*Math.PI/6)),(int)(150*Math.sin(i*2*Math.PI/6)));
 			 }
+			
 			 g.drawPolygon(p);
+			 g2.fill(p);
 		}
 	}
 
@@ -74,7 +77,7 @@ public class Transforms2D extends JPanel {
 	private JComboBox<String> transformSelect;
 
 	public Transforms2D() throws IOException {
-		pic = ImageIO.read(getClass().getClassLoader().getResource("shuttle.jpg"));
+		//pic = ImageIO.read(getClass().getClassLoader().getResource("shuttle.jpg"));
 		display = new Display();
 		display.setBackground(Color.YELLOW);
 		display.setPreferredSize(new Dimension(600,600));
